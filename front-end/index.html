@@ -17,6 +17,7 @@
   <script src="/js/models/team.js"></script>
   <script src="/js/controllers/usersController.js"></script>
   <script src="/js/controllers/usersShowController.js"></script>
+  <script src="/js/controllers/usersIndexController.js"></script>
   <script src="/js/controllers/teamsController.js"></script>
   <script src="/js/services/authInterceptor.js"></script>
   <script src="/js/services/tokenService.js"></script>
@@ -50,7 +51,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li ng-show="users.checkLoggedIn()">
-              <a ui-sref="users">Users</a>
+              <a ui-sref="usersIndex">Users</a>
             </li>
             <li ng-hide="users.checkLoggedIn()">
               <a ui-sref="login">Login</a>

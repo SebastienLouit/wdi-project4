@@ -7,26 +7,16 @@ function UsersController(User, CurrentUser, $state, $stateParams){
 
   var self = this;
 
-  self.all           = [];
   self.user          = null;
   self.currentUser   = null;
   self.error         = null;
-  self.getUsers      = getUsers;
   self.register      = register;
   self.login         = login;
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
   self.updateUser    = updateUser;
 
-
-  function getUsers() {
-    User.query(function(data){
-      self.all = data.users;
-    });
-  }
-
   function updateUser() {
-    console.log(self.currentUser);
     if (self.currentUser) {
       User.update({ id: self.currentUser }, { user: self.user }, function(){
         self.user = {};
@@ -42,8 +32,7 @@ function UsersController(User, CurrentUser, $state, $stateParams){
   function handleLogin(res) {
     var token = res.token ? res.token : null;
     if (token) {
-      self.getUsers();
-      $state.go('home');
+      $state.go('usersIndex');
     }
     self.currentUser = CurrentUser.getUser();
   }
@@ -71,8 +60,5 @@ function UsersController(User, CurrentUser, $state, $stateParams){
     return !!self.currentUser;
   }
 
-  if (checkLoggedIn()) {
-    self.getUsers();
-  }
   return self;
 }
