@@ -29,21 +29,23 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       controller: "usersEditController",
       controllerAs: "usersEdit"
     })
-    .state('teams', {
+    .state('teamsIndex', {
       url: "/teams",
       templateUrl: "./js/views/teams/index.html",
-      controller: "teamsController as teams"
+      controller: "teamsIndexController",
+      controllerAs: "teamsIndex"
     })
-    .state('newTeam', {
+    .state('teamsNew', {
       url: "/teams/new",
       templateUrl: "./js/views/teams/new.html",
-      controller: "teamsController as teams"
+      controller: "teamsNewController",
+      controllerAs: "teamsNew"
     })
-    .state('teamShow', {
+    .state('teamsShow', {
       url: "/teams/:id",
       templateUrl: "./js/views/teams/show.html",
-      controller: "teamsController",
-      controllerAs: "teamShow"
+      controller: "teamsShowController",
+      controllerAs: "teamsShow"
     })
     .state('usersShow', {
       url: "/users/:id",

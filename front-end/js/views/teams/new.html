@@ -1,5 +1,8 @@
 <h1>Create a Team</h1>
-<form id="new-project" ng-submit="teams.createTeam()">
-  <input type="text" name='project-title' id="project-title" placeholder="Title" ng-model="teams.team.name">
-  <input type="submit" value='Save' id="submit">
+<form id="new-project" ng-submit="teamsNew.createTeam()">
+  <div class="form-group">
+    <label for="teamName">Email address</label>
+    <input class="form-control" type="text" id="teamName" placeholder="Title" ng-model="teamsNew.team.name">
+  </div>
+  <input type="submit" value='Save' class="btn btn-default">
 </form>

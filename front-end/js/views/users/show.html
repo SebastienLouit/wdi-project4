@@ -6,8 +6,8 @@
         <h3>{{ usersShow.user.fullname | uppercase }}</h3>
         <p>{{ usersShow.user.email }}</p>
       </div>
-    <button type="button" name="button"><a ui-sref="newTeam">Create a team</a></button>
-    <button type="button" name="button"><a ui-sref="usersEdit({id: usersShow.user._id})">Edit Profile</a></button>
+    <a class="btn btn-default" ui-sref="teamsNew">Create a team</a>
+    <a class="btn btn-default" ui-sref="usersEdit({id: usersShow.user._id})">Edit Profile</a>
     </div>
   </div>
 </section>

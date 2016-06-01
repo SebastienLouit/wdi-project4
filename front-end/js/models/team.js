@@ -7,19 +7,20 @@ function Team($resource, API){
 
   return $resource(
     API+'/teams/:id', {id: '@id'},
-    { 'get':       { method: 'GET' },
+    {
+      'get':       { method: 'GET' },
       'save':      { method: 'POST' },
       'query':     { method: 'GET', isArray: false},
       'remove':    { method: 'DELETE' },
       'delete':    { method: 'DELETE' },
       'update':    { method: 'PUT' },
-      'register': {
-    url: API +'/register',
-    method: "POST"
-    },
-  'login':      {
-    url: API + '/login',
-    method: "POST"
+      'join': {
+        url: API +'/teams/:id/join',
+        method: "PUT"
+      },
+      'leave':      {
+        url: API +'/teams/:id/leave',
+        method: "PUT"
       }
     }
   );

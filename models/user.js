@@ -6,8 +6,7 @@ var userSchema = mongoose.Schema({
   fullname: { type: String },
   image:    { type: String },
   email:    { type: String, unique: true, required: true },
-  password: { type: String, required: true },
-  teams: [{ type: mongoose.Schema.ObjectId, ref: 'Team' }]
+  password: { type: String, required: true }
 });
 
 // INCLUDE PASSWORD CONFIRMATION

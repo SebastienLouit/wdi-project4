@@ -1,10 +1,22 @@
-<div class="media-body" ng-init="teams.getTeam()">
-  <h4 class="media-heading">The name of the team is :{{ teams.team.name }}</h4>
-  <h3 class="media-heading">The members are:</h3>
-  <hr>
+<div class="media-body">
+  <h2 class="media-heading">{{ teamsShow.team.name }}</h2>
+  <p>Creator: <a ui-sref="usersShow({id: teamsShow.team.creator._id})">{{ teamsShow.team.creator.username }}</a>
+  </p>
   <ul>
-    <li ng-repeat="member in teams.team.members">{{ member.fullname }}</li>
+    <li>
+      <a class="btn btn-default" ng-click="teamsShow.joinTeam()">Join Team</a>
+    </li>
+    <li>
+      <a class="btn btn-default" ng-click="teamsShow.leaveTeam()">Leave Team</a>
+    </li>
+    <li>
+      <a class="btn btn-default" ng-click="teamsShow.deleteTeam()">Delete</a>
+    </li>
   </ul>
-
+  <h3 class="media-heading">Members:</h3>
+  <ul>
+    <li ng-repeat="member in teamsShow.team.members">
+      <a ui-sref="usersShow({id: teamsShow.team.creator._id})">{{ member.username }}</a>
+    </li>
+  </ul>
 </div>
-<button type="button" name="JoinTeam" ng-click="teams.joinTeam()">Join Team</button>
