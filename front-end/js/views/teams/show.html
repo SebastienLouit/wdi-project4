@@ -1,0 +1,10 @@
+<div class="media-body" ng-init="teams.getTeam()">
+  <h4 class="media-heading">The name of the team is :{{ teams.team.teamName }}</h4>
+  <h3 class="media-heading">The members are:</h3>
+  <hr>
+  <ul>
+    <li ng-repeat="member in teams.team.members">{{ member.local.fullname }}</li>
+  </ul>
+
+</div>
+<button type="button" name="JoinTeam" ng-click="teams.joinTeam()">Join Team</button>
