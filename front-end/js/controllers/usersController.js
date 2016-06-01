@@ -1,6 +1,6 @@
 angular
   .module('teamlance')
-  .controller('UsersController', UsersController);
+  .controller('usersController', UsersController);
 
 UsersController.$inject = ['User', 'CurrentUser', '$state', '$stateParams'];
 function UsersController(User, CurrentUser, $state, $stateParams){

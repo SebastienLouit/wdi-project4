@@ -1,16 +1,16 @@
 <ul class="media-list">
   <li class="media" ng-repeat="team in teams.all">
     <div class="media-left">
-      <a ui-sref="team({ id: team._id })">
-         <h2 class="media-heading">{{ team.local.teamName }}
+      <a ui-sref="teamShow({ id: team._id })">
+         <h2 class="media-heading">{{ team.name }}
          </h2>
       </a>
-      <h3>{{ team.creator.local.fullname }}</h3>
+      <h3>{{ team.creator.fullname }}</h3>
     </div>
     <div class="media-body">
       <h3 class="media-heading">The members are</h3>
       <ul>
-        <li ng-repeat="member in team.members">{{member.local.fullname}}</li>
+        <li ng-repeat="member in team.members">{{member.fullname}}</li>
         <button type="button"> <a ng-click="teams.deleteTeam(team)">Delete</a></button>
       </ul>
     </div>

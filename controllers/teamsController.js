@@ -12,12 +12,10 @@ function teamsCreate(req, res){
   team.creator  = req.body.user.user._id;
 
   team.save(function(err, team){
-        var id = req.body.user.user._id;
+    var id = req.body.user.user._id;
     if (err) return res.status(500).json(err);
-    console.log(team);
     return res.status(200).json(team);
 
-    console.log("id: ", id);
     User.findById(id, function(err, user){
       user.teams.push(team);
       user.save(function(err, user) {
@@ -46,8 +44,8 @@ function teamsShow(req, res){
 //     if (err) return res.status(500).json({message: "Something went wrong!"});
 //     if (!team) return res.status(404).json({message: 'No team found.'});
 
-//     // if (req.body.email) team.local.email = req.body.name;
-//     // if (req.body.password) team.local.password = req.body.password;
+//     // if (req.body.email) team.email = req.body.name;
+//     // if (req.body.password) team.password = req.body.password;
 
 //     team.save(function(err) {
 //      if (err) return res.status(500).json({message: "Something went wrong!"});

@@ -24,31 +24,29 @@ function MainRouter($stateProvider, $urlRouterProvider) {
     .state('editProfile', {
       url: "/users/edit",
       templateUrl: "./js/views/users/edit.html",
-      controller: "UsersController as users"
+      controller: "usersController as users"
     })
     .state('teams', {
       url: "/teams",
       templateUrl: "./js/views/teams/index.html",
-      controller: "TeamsController as teams"
+      controller: "teamsController as teams"
     })
     .state('newTeam', {
       url: "/teams/new",
       templateUrl: "./js/views/teams/new.html",
-      controller: "TeamsController as teams"
+      controller: "teamsController as teams"
     })
-    .state('team', {
+    .state('teamShow', {
       url: "/teams/:id",
       templateUrl: "./js/views/teams/show.html",
-      controller: "TeamsController as teams"
+      controller: "teamsController",
+      controllerAs: "teamShow"
     })
-    .state('user', {
+    .state('usersShow', {
       url: "/users/:id",
       templateUrl: "./js/views/users/show.html",
-      controller: function($scope, $stateParams, User) {
-        User.get({ id: $stateParams.id }, function(res){
-          $scope.$parent.users.user = res.user;
-        });
-      }
+      controller: "usersShowController",
+      controllerAs: "usersShow"
     });
 
   $urlRouterProvider.otherwise("/");

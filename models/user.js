@@ -2,13 +2,11 @@ var mongoose = require("mongoose");
 var bcrypt   = require('bcrypt-nodejs');
 
 var userSchema = mongoose.Schema({
-  local: {
-    username: { type: String },
-    fullname: { type: String },
-    image:    { type: String },
-    email:    { type: String, unique: true, required: true },
-    password: { type: String, required: true }
-  },
+  username: { type: String },
+  fullname: { type: String },
+  image:    { type: String },
+  email:    { type: String, unique: true, required: true },
+  password: { type: String, required: true },
   teams: [{ type: mongoose.Schema.ObjectId, ref: 'Team' }]
 });
 
@@ -19,7 +17,7 @@ userSchema.statics.encrypt = function(password) {
 };
 
 userSchema.methods.validPassword = function(password) {
-  return bcrypt.compareSync(password, this.local.password);
+  return bcrypt.compareSync(password, this.password);
 };
 
 module.exports = mongoose.model("User", userSchema);

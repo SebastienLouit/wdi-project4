@@ -1,6 +1,6 @@
 angular
   .module('teamlance')
-  .controller('TeamsController', TeamsController);
+  .controller('teamsController', TeamsController);
 
 TeamsController.$inject = ['Team','$state', '$stateParams', 'CurrentUser', '$scope'];
 function TeamsController(Team, $state, $stateParams, CurrentUser, $scope){
@@ -31,14 +31,8 @@ function TeamsController(Team, $state, $stateParams, CurrentUser, $scope){
 
   function createTeam(){
     var user = CurrentUser.user;
-    console.log(user);
-    console.log(self.team);
     Team.save({ team: self.team, user: CurrentUser }, function(team) {
-
-      console.log("self.team: ", self.team);
-      console.log("team: ", team);
       user.teams.push(team);
-      console.log("user.teams: ", user.teams);
       // self.team = {};
     });
   }
@@ -50,7 +44,6 @@ function TeamsController(Team, $state, $stateParams, CurrentUser, $scope){
     var thisTeam = { team: self.team };
     self.team.members.push(user);
     Team.update({id: self.team._id }, thisTeam, function(data){
-      console.log("data:", data);
       self.team = data;
     });
   }

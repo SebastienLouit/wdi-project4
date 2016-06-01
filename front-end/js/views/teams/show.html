@@ -1,9 +1,9 @@
 <div class="media-body" ng-init="teams.getTeam()">
-  <h4 class="media-heading">The name of the team is :{{ teams.team.teamName }}</h4>
+  <h4 class="media-heading">The name of the team is :{{ teams.team.name }}</h4>
   <h3 class="media-heading">The members are:</h3>
   <hr>
   <ul>
-    <li ng-repeat="member in teams.team.members">{{ member.local.fullname }}</li>
+    <li ng-repeat="member in teams.team.members">{{ member.fullname }}</li>
   </ul>
 
 </div>
