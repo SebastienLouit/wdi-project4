@@ -21,7 +21,7 @@ function teamsCreate(req, res){
 function teamsShow(req, res){
   Team
   .findById(req.params.id)
-  .populate(["members", "creator"]).exec(function(err, team){
+  .populate(["members", "creator", "requests.sender"]).exec(function(err, team){
     if (err) return res.status(404).json({message: 'Something went wrong.'});
     res.status(200).json({ team: team });
   });

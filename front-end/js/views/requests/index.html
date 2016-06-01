@@ -1,0 +1,15 @@
+<h2>Requests</h2>
+<ul>
+  <li ng-repeat="team in requestsIndex.all">
+    <ul>
+      <li ng-repeat="request in team.requests" ng-if="request.status === 'pending'">
+        <a ui-sref="usersShow({id: request.sender._id})">{{ request.sender.username }}</a> wants to join <a ui-sref="teamsShow({id: team._id})">{{ team.name }}</a>
+        <ul>
+          <li><a ng-click="requestsIndex.accept(team, request)">Accept</a></li>
+          <li><a ng-click="requestsIndex.reject(team, request)">Reject</a></li>
+        </ul>
+      </li>
+    </ul>
+
+  </li>
+</ul>

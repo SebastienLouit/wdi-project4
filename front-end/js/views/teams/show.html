@@ -16,7 +16,13 @@
   <h3 class="media-heading">Members:</h3>
   <ul>
     <li ng-repeat="member in teamsShow.team.members">
-      <a ui-sref="usersShow({id: teamsShow.team.creator._id})">{{ member.username }}</a>
+      <a ui-sref="usersShow({id: member._id})">{{ member.username }}</a>
+    </li>
+  </ul>
+  <h3 class="media-heading">Requests:</h3>
+  <ul>
+    <li ng-repeat="request in teamsShow.team.requests">
+      <a ui-sref="usersShow({id: request.sender._id})">{{ request.sender.username }}</a>
     </li>
   </ul>
 </div>

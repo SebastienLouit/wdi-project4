@@ -2,8 +2,8 @@ angular
   .module('teamlance')
   .controller('teamsShowController', TeamsShowController);
 
-TeamsShowController.$inject = ['Team', '$state', 'CurrentUser', '$stateParams'];
-function TeamsShowController(Team, $state, CurrentUser, $stateParams){
+TeamsShowController.$inject = ['Team', '$state', 'CurrentUser', '$stateParams', 'Request'];
+function TeamsShowController(Team, $state, CurrentUser, $stateParams, Request){
 
   var self         = this;
   self.joinTeam    = joinTeam;
@@ -16,9 +16,13 @@ function TeamsShowController(Team, $state, CurrentUser, $stateParams){
   });
 
   function joinTeam(){
-    Team.join({id: self.team._id }, { user_id: self.currentUser._id }, function(data){
-      self.team = data.team;
+    Request.create({user_id: self.currentUser._id, id: self.team._id }, function(data){
+      self.team = data.request;
     });
+
+    // Team.join({id: self.team._id }, { user_id: self.currentUser._id }, function(data){
+    //   self.team = data.team;
+    // });
   }
 
   function leaveTeam(){
