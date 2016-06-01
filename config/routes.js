@@ -17,6 +17,7 @@ router.route('/users')
 router.route('/users/:id')
   .get(usersController.usersShow)
   .patch(usersController.usersUpdate)
+  .put(usersController.usersUpdate)
   .delete(usersController.usersDelete);
 
 router.route('/teams')
@@ -26,8 +27,7 @@ router.route('/teams')
 router.route('/teams/:id')
   .get(teamsController.teamsShow)
   .put(teamsController.teamsUpdate)
+  .patch(teamsController.teamsUpdate)
   .delete(teamsController.teamsDelete);
-
-
 
 module.exports = router;

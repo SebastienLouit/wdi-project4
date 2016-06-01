@@ -1,9 +1,9 @@
 angular
   .module('teamlance')
-  .controller('usersController', UsersController);
+  .controller('mainController', MainController);
 
-UsersController.$inject = ['User', 'CurrentUser', '$state', '$stateParams'];
-function UsersController(User, CurrentUser, $state, $stateParams){
+MainController.$inject = ['User', 'CurrentUser', '$state', '$stateParams'];
+function MainController(User, CurrentUser, $state, $stateParams){
 
   var self = this;
 
@@ -14,20 +14,6 @@ function UsersController(User, CurrentUser, $state, $stateParams){
   self.login         = login;
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
-  self.updateUser    = updateUser;
-
-  function updateUser() {
-    if (self.currentUser) {
-      User.update({ id: self.currentUser }, { user: self.user }, function(){
-        self.user = {};
-      });
-    } else {
-      User.save({ user: self.user }, function(user) {
-        self.users.push(user);
-        self.user = {};
-      });
-    }
-  }
 
   function handleLogin(res) {
     var token = res.token ? res.token : null;

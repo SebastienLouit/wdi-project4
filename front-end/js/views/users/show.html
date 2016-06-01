@@ -7,7 +7,7 @@
         <p>{{ usersShow.user.email }}</p>
       </div>
     <button type="button" name="button"><a ui-sref="newTeam">Create a team</a></button>
-    <button type="button" name="button"><a ui-sref="editProfile">Edit Profile</a></button>
+    <button type="button" name="button"><a ui-sref="usersEdit({id: usersShow.user._id})">Edit Profile</a></button>
     </div>
   </div>
 </section>

@@ -23,10 +23,11 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       controller: "usersIndexController",
       controllerAs: "usersIndex"
     })
-    .state('editProfile', {
-      url: "/users/edit",
+    .state('usersEdit', {
+      url: "/users/:id/edit",
       templateUrl: "./js/views/users/edit.html",
-      controller: "usersController as users"
+      controller: "usersEditController",
+      controllerAs: "usersEdit"
     })
     .state('teams', {
       url: "/teams",

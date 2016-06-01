@@ -1,20 +1,20 @@
 <h2>Edit profile</h2>
 
-  <form id="editProfile" name="users.editForm" ng-submit="users.updateUser()">
+  <form id="editProfile" name="usersEdit.editForm" ng-submit="usersEdit.updateUser()">
 
     <div class="form-group">
       <label for="username">Username</label>
-      <input type="text" class="form-control" id="username" placeholder="Username" ng-model="users.user.username">
+      <input type="text" class="form-control" id="username" placeholder="Username" ng-model="usersEdit.user.username">
     </div>
 
     <div class="form-group">
       <label for="fullname">Full name</label>
-      <input type="text" class="form-control" id="fullname" placeholder="Full name" ng-model="users.user.fullname">
+      <input type="text" class="form-control" id="fullname" placeholder="Full name" ng-model="usersEdit.user.fullname">
     </div>
 
     <div class="form-group">
       <label for="image">Image URL</label>
-      <input type="text" class="form-control" id="image" placeholder="Image URL" ng-model="users.user.image">
+      <input type="text" class="form-control" id="image" placeholder="Image URL" ng-model="usersEdit.user.image">
     </div>
 
     <button type="submit" class="btn btn-default">Submit</button>

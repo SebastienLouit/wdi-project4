@@ -15,8 +15,9 @@
   <script src="/js/app.js"></script>
   <script src="/js/models/user.js"></script>
   <script src="/js/models/team.js"></script>
-  <script src="/js/controllers/usersController.js"></script>
+  <script src="/js/controllers/mainController.js"></script>
   <script src="/js/controllers/usersShowController.js"></script>
+  <script src="/js/controllers/usersEditController.js"></script>
   <script src="/js/controllers/usersIndexController.js"></script>
   <script src="/js/controllers/teamsController.js"></script>
   <script src="/js/services/authInterceptor.js"></script>
@@ -30,7 +31,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
-<body ng-controller="usersController as users">
+<body ng-controller="mainController as main">
   <header>
     <nav class="navbar navbar-default">
       <div class="container">
@@ -42,25 +43,29 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" ui-sref-active="active" ui-sref="home">Angular Authentication</a>
-          <a class="navbar-brand" ng-click="teams.getTeams()" ui-sref="teams">Teams</a>
-          <a class="navbar-brand" ui-sref="usersShow({ id: users.currentUser._id })">{{users.currentUser.username}}</a>
+          <a class="navbar-brand" ui-sref-active="active" ui-sref="home">Teamlance</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li ng-show="users.checkLoggedIn()">
+            <li ng-show="main.checkLoggedIn()">
+              <a ui-sref="teams">Teams</a>
+            </li>
+            <li ng-show="main.checkLoggedIn()">
               <a ui-sref="usersIndex">Users</a>
             </li>
-            <li ng-hide="users.checkLoggedIn()">
+            <li ng-hide="main.checkLoggedIn()">
+              <a ui-sref="usersShow({ id: main.currentUser._id })">{{main.currentUser.username}}</a>
+            </li>
+            <li ng-hide="main.checkLoggedIn()">
               <a ui-sref="login">Login</a>
             </li>
-            <li ng-hide="users.checkLoggedIn()">
+            <li ng-hide="main.checkLoggedIn()">
               <a ui-sref="register">Register</a>
             </li>
-            <li ng-show="users.checkLoggedIn()">
-              <a ui-sref="home" ng-click="users.logout()">Logout</a>
+            <li ng-show="main.checkLoggedIn()">
+              <a ui-sref="home" ng-click="main.logout()">Logout</a>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
