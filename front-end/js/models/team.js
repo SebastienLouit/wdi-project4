@@ -1,5 +1,5 @@
 angular
-  .module('logging')
+  .module('teamlance')
   .factory('Team', Team);
 
 Team.$inject = ['$resource', 'API'];

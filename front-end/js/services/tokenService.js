@@ -1,5 +1,5 @@
 angular
-  .module('logging')
+  .module('teamlance')
   .service('TokenService', TokenService);
 
 TokenService.$inject = ["$window", "jwtHelper"];

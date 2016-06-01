@@ -1,5 +1,5 @@
 angular
-  .module('logging')
+  .module('teamlance')
   .controller('TeamsController', TeamsController);
 
 TeamsController.$inject = ['Team','$state', '$stateParams', 'CurrentUser', '$scope'];

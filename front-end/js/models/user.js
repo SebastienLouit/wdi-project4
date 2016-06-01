@@ -1,5 +1,5 @@
 angular
-  .module('logging')
+  .module('teamlance')
   .factory('User', User);
 
 User.$inject = ['$resource', 'API'];

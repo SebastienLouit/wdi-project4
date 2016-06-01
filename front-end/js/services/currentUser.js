@@ -1,5 +1,5 @@
 angular
-  .module('logging')
+  .module('teamlance')
   .service("CurrentUser", CurrentUser);
 
 CurrentUser.$inject = ["TokenService"];
