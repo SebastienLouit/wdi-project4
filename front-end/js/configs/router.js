@@ -11,11 +11,15 @@ function MainRouter($stateProvider, $urlRouterProvider) {
     })
     .state('login', {
       url: "/login",
-      templateUrl: "./js/views/authentications/login.html"
+      templateUrl: "./js/views/authentications/login.html",
+      controller: "authController",
+      controllerAs: "auth"
     })
     .state('register', {
       url: "/register",
-      templateUrl: "./js/views/authentications/register.html"
+      templateUrl: "./js/views/authentications/register.html",
+      controller: "authController",
+      controllerAs: "auth"
     })
     .state('usersIndex', {
       url: "/users",

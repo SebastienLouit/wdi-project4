@@ -1,30 +1,30 @@
 <section>
   <h2>Register</h2>
 
-  <form id="login" name="users.registerForm" ng-submit="users.register()" novalidate>
-    <div class="alert alert-danger" role="alert" ng-show="(!!users.error && users.registerForm.$submitted)">{{ users.error }}</div>
+  <form id="login" name="auth.registerForm" ng-submit="auth.register()" novalidate>
+    <div class="alert alert-danger" role="alert" ng-show="(!!auth.error && auth.registerForm.$submitted)">{{ auth.error }}</div>
 
     <div class="form-group">
       <label for="username">Username</label>
-      <input type="text" class="form-control" id="username" placeholder="Username" ng-model="users.user.username">
+      <input type="text" class="form-control" id="username" placeholder="Username" ng-model="auth.user.username">
     </div>
 
     <div class="form-group">
       <label for="fullname">Full name</label>
-      <input type="text" class="form-control" id="fullname" placeholder="Full name" ng-model="users.user.fullname">
+      <input type="text" class="form-control" id="fullname" placeholder="Full name" ng-model="auth.user.fullname">
     </div>
 
     <div class="form-group">
       <label for="image">Image URL</label>
-      <input type="text" class="form-control" id="image" placeholder="Image URL" ng-model="users.user.image">
+      <input type="text" class="form-control" id="image" placeholder="Image URL" ng-model="auth.user.image">
     </div>
 
     <div class="form-group">
       <label for="email">Email address</label>
-      <input type="email" class="form-control" id="email" placeholder="Email" name="email" ng-model="users.user.email" required>
+      <input type="email" class="form-control" id="email" placeholder="Email" name="email" ng-model="auth.user.email" required>
     </div>
 
-    <div class="alert alert-danger" role="alert" ng-messages="users.registerForm['email'].$error" ng-show="(users.registerForm.$submitted && users.registerForm['email'].$invalid)">
+    <div class="alert alert-danger" role="alert" ng-messages="auth.registerForm['email'].$error" ng-show="(auth.registerForm.$submitted && auth.registerForm['email'].$invalid)">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
       <span class="sr-only">Error:</span>
       <span ng-message="required">Email is required.</span>
@@ -32,10 +32,10 @@
 
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" class="form-control" id="password" name="password" placeholder="Password" ng-model="users.user.password" required>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Password" ng-model="auth.user.password" required>
     </div>
 
-    <div class="alert alert-danger" role="alert" ng-messages="users.registerForm['password'].$error" ng-show="(users.registerForm.$submitted && users.registerForm['password'].$invalid)">
+    <div class="alert alert-danger" role="alert" ng-messages="auth.registerForm['password'].$error" ng-show="(auth.registerForm.$submitted && auth.registerForm['password'].$invalid)">
       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
       <span class="sr-only">Error:</span>
       <span ng-message="required">Password is required.</span>

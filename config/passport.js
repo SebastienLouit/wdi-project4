@@ -17,7 +17,7 @@ module.exports = function(passport) {
       // No error but already an user registered
       if (user) return done(null, false, { message: "Please choose another email." });
 
-      var newUser            = new User();
+      var newUser      = new User();
       newUser.email    = email;
       newUser.username = req.body.username;
       newUser.fullname = req.body.fullname;
@@ -26,7 +26,6 @@ module.exports = function(passport) {
 
       newUser.save(function(err, user) {
         // Error found
-        console.log(err)
         if (err) return done(err, false, { message: "Something went wrong." });
 
         // New user created
@@ -35,4 +34,4 @@ module.exports = function(passport) {
     });
   }));
 
-}
+};

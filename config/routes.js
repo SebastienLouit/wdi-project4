@@ -32,10 +32,10 @@ router.route('/teams/:id')
 
 router.route('/teams/:id/join')
   .put(teamsController.teamsJoin)
-  .patch(teamsController.teamsJoin)
+  .patch(teamsController.teamsJoin);
 
 router.route('/teams/:id/leave')
   .put(teamsController.teamsLeave)
-  .patch(teamsController.teamsLeave)
+  .patch(teamsController.teamsLeave);
 
 module.exports = router;
