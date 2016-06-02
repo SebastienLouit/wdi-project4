@@ -1,22 +1,22 @@
-<div class="page-header">
+<div id="blue">
+	    <div class="container">
+			<div class="row">
+				<h3>All our members</h3>
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /blue -->
+<h2>MEET OUR TEAM</h2>
 
-</div>
-
-<div class="container">
-
-<ul class="media-list">
-  <li class="media" ng-repeat="user in usersIndex.all">
-    <div class="media-left">
-      <a ui-sref="usersShow({ id: user._id })">
-        <img class="media-object" ng-src="{{ user.image }}">
-      </a>
+<div class="row-fluid">
+  <div ng-repeat="user in usersIndex.all" class="col-md-4">
+      <ul>
+        <a ui-sref="usersShow({ id: user._id })">
+          <img src="{{user.image}}" alt="leader photo photo" />
+        </a>
+        <h4>{{ user.fullname }}</h4>
+        <h5>{{ user.email }}</h5>
+        <p>{{ user.competances }}</p>
+        <div class="hline"></div>
+      </ul>
     </div>
-    <div class="media-body">
-      <h4 class="media-heading">{{ user.fullname }}</h4>
-      <p>{{ user.email }}</p>
-      <p> {{ user.competances }}</p>
-    </div>
-  </li>
-</ul>
-
-</div>
+  </div>

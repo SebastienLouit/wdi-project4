@@ -545,3 +545,19 @@ csmall2 {
 	padding-right: 15px;
 	font-size: 18px;
 }
+
+.small {
+  height: 30px;
+  width: 30px;
+}
+.float-left{
+	float: left;
+}
+
+
+h4.team-info {
+	margin: 10px;
+}
+h4.team-leader {
+	margin: 8px !important;
+}
