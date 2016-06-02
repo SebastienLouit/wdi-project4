@@ -32,14 +32,27 @@
   <script src="/js/configs/router.js"></script>
   <script src="/js/constants/api.js"></script>
 
+  <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/css/animate.min.css" type="text/css">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+  <!-- <link rel="stylesheet" href="/css/creative.css" type="text/css">
+  <link rel="stylesheet" href="/css/freelancer.css" type="text/css"> -->
   <link rel="stylesheet" type="text/css" href="/css/style.css">
-  
+
+  <!-- <script src="/js/includes/jquery.easing.min.js" charset="utf-8"></script>
+  <script src="/js/includes/jquery.fittext.js" charset="utf-8"></script>
+  <script src="/js/includes/wow.min.js" charset="utf-8"></script>
+  <script src="/js/includes/creative.js" charset="utf-8"></script> -->
+
+
+
 </head>
 <body ng-controller="mainController as main">
-  <header>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -83,8 +96,6 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-  </header>
   <main class="container" ui-view></main>
-
 </body>
 </html>

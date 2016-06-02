@@ -8,10 +8,11 @@ var requestSchema = new mongoose.Schema({
 });
 
 var teamSchema = mongoose.Schema({
-  creator:  { type: mongoose.Schema.ObjectId, ref: 'User' },
-  name:     { type: String },
-  members:  [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
-  requests: [requestSchema],
+  creator:     { type: mongoose.Schema.ObjectId, ref: 'User' },
+  name:        { type: String },
+  description: { type: String },
+  members:     [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+  requests:    [requestSchema],
 }, {
   timestamps: true
 });

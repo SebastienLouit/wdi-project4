@@ -17,12 +17,15 @@ module.exports = function(passport) {
       // No error but already an user registered
       if (user) return done(null, false, { message: "Please choose another email." });
 
-      var newUser      = new User();
-      newUser.email    = email;
-      newUser.username = req.body.username;
-      newUser.fullname = req.body.fullname;
-      newUser.image    = req.body.image;
-      newUser.password = User.encrypt(password);
+      var newUser            = new User();
+      newUser.email          = email;
+      newUser.username       = req.body.username;
+      newUser.fullname       = req.body.fullname;
+      newUser.image          = req.body.image;
+      newUser.description    = req.body.description;
+      newUser.competances    = req.body.competances;
+      newUser.password       = User.encrypt(password);
+
 
       newUser.save(function(err, user) {
         // Error found

@@ -1,15 +1,27 @@
-<ul class="media-list">
-  <li class="media" ng-repeat="team in teamsIndex.all">
-    <div class="media-body">
-      <a ui-sref="teamsShow({ id: team._id })">
-        <h2 class="media-heading">{{ team.name }}</h2>
-      </a>
-      <p>Creator: {{ team.creator.fullname }}</h3>
-      <p>Members: </h3>
-      <ul>
-        <li ng-repeat="member in team.members">{{member.fullname}}</li>
-      </ul>
+<div class="row">
+  <div class="page-header">
+   </div>
+    <div class="col-sm-12 col-md-12 col-lg-12" style="background-color:yellow;">
+      <div class="container">
+        <ul class="media">
+            <li class="media" ng-repeat="team in teamsIndex.all">
+              <div class="media-body">
+                  <a ui-sref="teamsShow({ id: team._id })">
+                    <h2 class="media-heading">{{ team.name }}</h2>
+                  </a>
+                  <h3>Creator: {{ team.creator.fullname }}</h3>
+                  <img src="{{team.creator.image}}" alt="author photo" />
+                  <h4>Members: </h4>
+                <ul>
+                  <li ng-repeat="member in team.members">
+                    <p>{{member.fullname}}</p>
+                    <p><img src="{{member.image}}" alt="member image" /></p>
+                  </li>
+                </ul>
+              </div>
+            <hr>
+          </li>
+        </ul>
     </div>
-  <hr>
-  </li>
-</ul>
+  </div>
+</div>
