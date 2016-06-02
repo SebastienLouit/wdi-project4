@@ -1,41 +1,6 @@
 <div id="blue">
 	    <div class="container">
 			<div class="row">
-				<h3>All our amazing teams</h3>
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /blue -->
-
-<div class="container">
- <div class="media-body">
-  <h2 class="media-heading">{{ teamsShow.team.name }}</h2>
-  <p>Creator: <a ui-sref="usersShow({id: teamsShow.team.creator._id})">{{ teamsShow.team.creator.username }}</a>
-  </p>
-    <a class="btn btn-default" ng-click="teamsShow.joinTeam()">Join Team</a>
-    <a class="btn btn-default" ng-click="teamsShow.leaveTeam()">Leave Team</a>
-    <a class="btn btn-default" ng-click="teamsShow.deleteTeam()">Delete</a>
-
-
-  <h3 class="media-heading">Members:</h3>
-  <ul>
-    <li ng-repeat="member in teamsShow.team.members">
-      <a ui-sref="usersShow({id: member._id})">{{ member.username }}</a>
-    </li>
-  </ul>
-  <h3 class="media-heading">Requests:</h3>
-  <ul>
-    <li ng-repeat="request in teamsShow.team.requests">
-      <a ui-sref="usersShow({id: request.sender._id})">{{ request.sender.username }}</a>
-    </li>
-  </ul>
- </div>
-</div>
-
----------------
-
-<div id="blue">
-	    <div class="container">
-			<div class="row">
 				<h3>All you want to know about this amazing team.</h3>
 			</div><!-- /row -->
 	    </div> <!-- /container -->
@@ -51,10 +16,8 @@
 		 		<h3 class="ctitle">{{ teamsShow.team.name }}</h3>
         <h3>Team Leader: <a ui-sref="usersShow({id: teamsShow.team.creator._id})">{{ teamsShow.team.creator.username }}</a>
         <h3>
-		 		<p><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-		 		<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-		 		<p>Contrary to popular belief, <b>Lorem Ipsum is not simply random text</b>. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at <a href="#">Hampden-Sydney College</a> in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
-		 		<p>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+		 		<p></p>
+		 		<p>{{ teamsShow.team.description }}</p>
 
 			</div><! --/col-lg-8 -->
 

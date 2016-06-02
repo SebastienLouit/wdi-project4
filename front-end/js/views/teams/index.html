@@ -14,19 +14,18 @@
 		<div class="col-md-4">
 			<h4 class="team-leader team-info">Team leader : {{ team.creator.fullname }}</h4>
 			<img src="{{team.creator.image}}" alt="leader photo photo" />
-			<h5 class="ctitle">KEY Skill</h5>
+			<h5 class="ctitle">{{team.creator.role}}</h5>
 			<div class="hline"></div>
-			<p>Description : Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 		</div>
 
-			<h4 class="team-info">Members: </h4>
+			<h4 class="team-info">Member: {{member.fullname}}</h4>
 			<div ng-repeat="member in team.members" class="col-md-4">
 				<img src="{{member.image}}" alt="leader photo photo" />
-				<p>{{member.fullname}}</p>
 				<h5 class="ctitle">{{member.role}}</h5>
 			</div>
 
 
 	  </div>
+		<p>Description : {{ team.description }} </p>
 	</div>
 </div>

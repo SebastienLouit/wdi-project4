@@ -24,6 +24,7 @@ module.exports = function(passport) {
       newUser.image          = req.body.image;
       newUser.description    = req.body.description;
       newUser.competances    = req.body.competances;
+      newUser.role           = req.body.role;
       newUser.password       = User.encrypt(password);
 
 
