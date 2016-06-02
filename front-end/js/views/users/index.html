@@ -5,7 +5,6 @@
 			</div><!-- /row -->
 	    </div> <!-- /container -->
 	</div><!-- /blue -->
-<h2>MEET OUR TEAM</h2>
 
 <div class="row-fluid">
   <div ng-repeat="user in usersIndex.all" class="col-md-4">
@@ -14,9 +13,9 @@
           <img src="{{user.image}}" alt="leader photo photo" />
         </a>
         <h4>{{ user.fullname }}</h4>
-        <h5>{{ user.email }}</h5>
-        <p>{{ user.competances }}</p>
-        <div class="hline"></div>
+				<h5 class="ctitle">{{member.role}}</h5>
+				<div class="hline"></div>
+        <p>{{ user.role }}</p>
       </ul>
     </div>
   </div>
