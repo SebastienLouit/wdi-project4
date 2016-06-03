@@ -29,8 +29,8 @@ function requestsCreate(req, res){
 
 // function requestsAccept(req, res){
 //   Team.findByIdAndUpdate(
-//     { 
-//       _id: req.params.team_id, 
+//     {
+//       _id: req.params.team_id,
 //       requests: {$elemMatch: { _id: req.params.id}}
 //     },
 //     {
@@ -56,16 +56,17 @@ function requestsAccept(req, res){
     .populate(["members", "creator"])
     .exec(function(err, team) {
       team.requests.forEach(function(teamRequest) {
-        if (teamRequest._id == req.params.id) {
+        if (teamRequest.id == req.params.id) {
           teamRequest.status = "accepted";
+          team.members.push(teamRequest.sender);
         }
-      })
+      });
       team.save(function(err, team) {
         if (err) return res.status(500).json(err);
         if (!team) return res.status(404).json(err);
         res.status(200).json({ message: "Request was accepted.", team: team });
-      })
-    })
+      });
+    });
 }
 
 function requestsReject(req, res){

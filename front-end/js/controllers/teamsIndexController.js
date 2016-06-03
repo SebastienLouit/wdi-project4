@@ -15,11 +15,13 @@ function TeamsIndexController(Team, CurrentUser){
   });
 
   function joinTeam(){
+    console.log("click")
     var user = CurrentUser.user;
     var teamId = $stateParams.id;
     var thisTeam = { team: self.team };
     self.team.members.push(user);
     Team.update({id: self.team._id }, thisTeam, function(data){
+      console.log (data)
       self.team = data;
     });
   }

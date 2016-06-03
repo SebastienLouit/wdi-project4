@@ -6,9 +6,6 @@
 	    </div> <!-- /container -->
 	</div><!-- /blue -->
 
-
-<h2>Requests</h2>
-<div class="row-fluid">
   <div ng-repeat="team in requestsIndex.all" class="col-md-4">
     <ul>
       <div ng-repeat="request in team.requests" ng-if="request.status === 'pending'">
@@ -17,13 +14,14 @@
               <div class="caption">
                 <h3><a ui-sref="usersShow({id: request.sender._id})">{{ request.sender.username }}</a></h3>
                 <p>Wants to join <a ui-sref="teamsShow({id: team._id})">{{ team.name }}</a>, do you wish to have her onboard ?</p>
-                <p><a  ng-click="requestsIndex.accept(team, request)" class="btn btn-primary" role="button">Accept</a> <a href=ng-click="requestsIndex.reject(team, request)" class="btn btn-default" role="button">Reject</a></p>
+                <p><a  ng-click="requestsIndex.accept(team, request)" class="btn btn-primary" role="button">Accept</a>
+									 <a ng-click="requestsIndex.reject(team, request)" class="btn btn-default" role="button">Reject</a></p>
               </div>
             </div>
       </ul>
     </div>
   </div>
-</div>
+
 
 <div class="page-header">
 </div>

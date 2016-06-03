@@ -16,7 +16,9 @@ function TeamsShowController(Team, $state, CurrentUser, $stateParams, Request){
   });
 
   function joinTeam(){
+    console.log("clik");
     Request.create({user_id: self.currentUser._id, id: self.team._id }, function(data){
+      console.log(data)
       self.team = data.request;
     });
 
